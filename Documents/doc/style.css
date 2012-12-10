@@ -1,0 +1,25 @@
+html,body  {
+    margin:0px;
+    padding:0px;
+}
+
+body
+{
+    font-family:sans-serif;
+    background:#003258;
+}
+
+
+div.main
+{
+    width:700px;
+    margin:auto;
+    background:#F7FBFF;
+    border:solid 1px #003258;
+    padding:20px;
+}
+
+h1
+{
+    text-align:center;
+}

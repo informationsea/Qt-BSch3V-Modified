@@ -1,0 +1,27 @@
+﻿<RCC>
+    <qresource prefix="/images">
+        <file alias="fileopen.png">images/fileopen.png</file>
+        <file alias="fileprint.png">images/fileprint.png</file>
+        <file alias="filesave.png">images/filesave.png</file>
+        <file alias="icon.png">images/icon.png</file>
+        <file alias="tag0.png">images/tag0.png</file>
+        <file alias="tag1.png">images/tag1.png</file>
+        <file alias="tag2.png">images/tag2.png</file>
+        <file alias="tag3.png">images/tag3.png</file>
+        <file alias="toolbent.png">images/toolbent.png</file>
+        <file alias="toolbus.png">images/toolbus.png</file>
+        <file alias="toolcmnt.png">images/toolcmnt.png</file>
+        <file alias="toolcomp.png">images/toolcomp.png</file>
+        <file alias="tooldash.png">images/tooldash.png</file>
+        <file alias="tooldrag.png">images/tooldrag.png</file>
+        <file alias="toolent.png">images/toolent.png</file>
+        <file alias="tooljunc.png">images/tooljunc.png</file>
+        <file alias="toollabel.png">images/toollabel.png</file>
+        <file alias="toolselect.png">images/toolselect.png</file>
+        <file alias="tooltag.png">images/tooltag.png</file>
+        <file alias="toolwire.png">images/toolwire.png</file>
+        <file alias="xbschicon.png">images/xbschicon.png</file>
+        <file alias="editmark.png">images/editmark.png</file>
+        <file alias="viewmark.png">images/viewmark.png</file>
+    </qresource>
+</RCC>

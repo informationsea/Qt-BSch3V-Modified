@@ -1,0 +1,927 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ApplicationWindow</class>
+ <widget class="QMainWindow" name="ApplicationWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>593</width>
+    <height>434</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>[*] Qt BSch3V Modified</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="images.qrc">
+    <normaloff>:/images/xbschicon.png</normaloff>:/images/xbschicon.png</iconset>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>16</width>
+    <height>16</height>
+   </size>
+  </property>
+  <property name="documentMode">
+   <bool>true</bool>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="SXBSchView" name="xbschview">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>503</width>
+         <height>361</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>593</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="action_New"/>
+    <addaction name="action_Open"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSave_as"/>
+    <addaction name="separator"/>
+    <addaction name="action_Export_image"/>
+    <addaction name="action_Print"/>
+    <addaction name="actionP_rint_Option"/>
+    <addaction name="separator"/>
+    <addaction name="action_Close"/>
+    <addaction name="action_Quit"/>
+   </widget>
+   <widget class="QMenu" name="menu_Edit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <widget class="QMenu" name="menu_Layer">
+     <property name="title">
+      <string>&amp;Layer</string>
+     </property>
+     <addaction name="actionSetup_Layer"/>
+     <addaction name="actionDarken_non_Active_Layer"/>
+     <addaction name="separator"/>
+     <addaction name="actionMove_to_Layer_0"/>
+     <addaction name="actionMove_to_Layer_1"/>
+     <addaction name="actionMove_to_Layer_2"/>
+     <addaction name="actionMove_to_Layer_3"/>
+     <addaction name="actionMove_to_Layer_4"/>
+     <addaction name="actionMove_to_Layer_5"/>
+     <addaction name="actionMove_to_Layer_6"/>
+     <addaction name="actionMove_to_Layer_7"/>
+    </widget>
+    <addaction name="action_Undo"/>
+    <addaction name="action_Cut"/>
+    <addaction name="action_Copy"/>
+    <addaction name="action_Paste"/>
+    <addaction name="action_Delete"/>
+    <addaction name="separator"/>
+    <addaction name="action_Attribute"/>
+    <addaction name="action_Mirror"/>
+    <addaction name="action_Rotate"/>
+    <addaction name="separator"/>
+    <addaction name="menu_Layer"/>
+   </widget>
+   <widget class="QMenu" name="menu_View">
+    <property name="title">
+     <string>&amp;View</string>
+    </property>
+    <addaction name="action_Refresh"/>
+    <addaction name="separator"/>
+    <addaction name="actionZoom_In"/>
+    <addaction name="actionZoom_Out"/>
+    <addaction name="separator"/>
+    <addaction name="action_Grid"/>
+   </widget>
+   <widget class="QMenu" name="menu_Tool">
+    <property name="title">
+     <string>&amp;Tool</string>
+    </property>
+    <addaction name="action_Select"/>
+    <addaction name="action_Drag"/>
+    <addaction name="action_Component"/>
+    <addaction name="separator"/>
+    <addaction name="action_Bus"/>
+    <addaction name="action_Wire"/>
+    <addaction name="actionD_ash"/>
+    <addaction name="separator"/>
+    <addaction name="action_Junction"/>
+    <addaction name="actionB_us_entry"/>
+    <addaction name="action_Entry"/>
+    <addaction name="separator"/>
+    <addaction name="action_Tag"/>
+    <addaction name="action_Label"/>
+    <addaction name="actionC_omment"/>
+   </widget>
+   <widget class="QMenu" name="menu_Set">
+    <property name="title">
+     <string>&amp;Set</string>
+    </property>
+    <addaction name="actionSheet_size"/>
+    <addaction name="actionS_nap"/>
+    <addaction name="separator"/>
+    <addaction name="actionLibrary"/>
+    <addaction name="action_Default_comment_font"/>
+    <addaction name="actionL_abel_Font"/>
+   </widget>
+   <widget class="QMenu" name="menu_Window">
+    <property name="title">
+     <string>&amp;Window</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_help">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionAbout_QtBSch3V_Modified"/>
+    <addaction name="actionAbout_Qt"/>
+    <addaction name="actionVisit_StorkLab_webpage"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Edit"/>
+   <addaction name="menu_View"/>
+   <addaction name="menu_Tool"/>
+   <addaction name="menu_Set"/>
+   <addaction name="menu_Window"/>
+   <addaction name="menu_help"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_Open"/>
+   <addaction name="actionSave"/>
+   <addaction name="separator"/>
+   <addaction name="action_Select"/>
+   <addaction name="action_Drag"/>
+   <addaction name="action_Component"/>
+   <addaction name="separator"/>
+   <addaction name="action_Bus"/>
+   <addaction name="action_Wire"/>
+   <addaction name="actionD_ash"/>
+   <addaction name="separator"/>
+   <addaction name="action_Junction"/>
+   <addaction name="actionB_us_entry"/>
+   <addaction name="action_Entry"/>
+   <addaction name="separator"/>
+   <addaction name="action_Tag"/>
+   <addaction name="action_Label"/>
+   <addaction name="actionC_omment"/>
+  </widget>
+  <widget class="QDockWidget" name="layerSetting">
+   <property name="windowTitle">
+    <string>Layer</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="2" column="0">
+      <widget class="QLabel" name="layerLabel1">
+       <property name="text">
+        <string>1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QRadioButton" name="layerSelect1">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QCheckBox" name="layerEnable1">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="layerLabel2">
+       <property name="text">
+        <string>2</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QRadioButton" name="layerSelect2">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QCheckBox" name="layerEnable2">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="layerLabel3">
+       <property name="text">
+        <string>3</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QRadioButton" name="layerSelect3">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QCheckBox" name="layerEnable3">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="layerLabel4">
+       <property name="text">
+        <string>4</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QRadioButton" name="layerSelect4">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2">
+      <widget class="QCheckBox" name="layerEnable4">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="layerLabel5">
+       <property name="text">
+        <string>5</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QRadioButton" name="layerSelect5">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="2">
+      <widget class="QCheckBox" name="layerEnable5">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="layerLabel6">
+       <property name="text">
+        <string>6</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QRadioButton" name="layerSelect6">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="2">
+      <widget class="QCheckBox" name="layerEnable6">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="layerLabel7">
+       <property name="text">
+        <string>7</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QRadioButton" name="layerSelect7">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="2">
+      <widget class="QCheckBox" name="layerEnable7">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0" colspan="3">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="images.qrc">:/images/editmark.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="images.qrc">:/images/viewmark.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QRadioButton" name="layerSelect0">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QCheckBox" name="layerEnable0">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="action_New">
+   <property name="text">
+    <string>&amp;New</string>
+   </property>
+  </action>
+  <action name="action_Open">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/fileopen.png</normaloff>:/images/fileopen.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Open...</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/filesave.png</normaloff>:/images/filesave.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionSave_as">
+   <property name="text">
+    <string>Save &amp;as...</string>
+   </property>
+  </action>
+  <action name="action_Export_image">
+   <property name="text">
+    <string>&amp;Export image...</string>
+   </property>
+  </action>
+  <action name="action_Print">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/fileprint.png</normaloff>:/images/fileprint.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Print...</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionP_rint_Option">
+   <property name="text">
+    <string>P&amp;rint Option...</string>
+   </property>
+  </action>
+  <action name="action_Close">
+   <property name="text">
+    <string>&amp;Close</string>
+   </property>
+  </action>
+  <action name="action_Quit">
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+  </action>
+  <action name="action_Undo">
+   <property name="text">
+    <string>&amp;Undo</string>
+   </property>
+  </action>
+  <action name="action_Cut">
+   <property name="text">
+    <string>Cu&amp;t</string>
+   </property>
+  </action>
+  <action name="action_Copy">
+   <property name="text">
+    <string>&amp;Copy</string>
+   </property>
+  </action>
+  <action name="action_Paste">
+   <property name="text">
+    <string>&amp;Paste</string>
+   </property>
+  </action>
+  <action name="action_Delete">
+   <property name="text">
+    <string>&amp;Delete</string>
+   </property>
+   <property name="shortcut">
+    <string>Backspace</string>
+   </property>
+  </action>
+  <action name="action_Attribute">
+   <property name="text">
+    <string>&amp;Attribute</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="action_Mirror">
+   <property name="text">
+    <string>&amp;Mirror</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
+  </action>
+  <action name="action_Rotate">
+   <property name="text">
+    <string>&amp;Rotate</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="action_Refresh">
+   <property name="text">
+    <string>&amp;Refresh</string>
+   </property>
+  </action>
+  <action name="actionZoom_In">
+   <property name="text">
+    <string>Zoom &amp;In</string>
+   </property>
+  </action>
+  <action name="actionZoom_Out">
+   <property name="text">
+    <string>Zoom Out</string>
+   </property>
+  </action>
+  <action name="action_Grid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Grid</string>
+   </property>
+  </action>
+  <action name="action_Select">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/toolselect.png</normaloff>:/images/toolselect.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Select</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
+  </action>
+  <action name="action_Drag">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/tooldrag.png</normaloff>:/images/tooldrag.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Drag</string>
+   </property>
+   <property name="shortcut">
+    <string>R</string>
+   </property>
+  </action>
+  <action name="action_Component">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/toolcomp.png</normaloff>:/images/toolcomp.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Component</string>
+   </property>
+   <property name="shortcut">
+    <string>P</string>
+   </property>
+  </action>
+  <action name="action_Bus">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/toolbus.png</normaloff>:/images/toolbus.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Bus</string>
+   </property>
+   <property name="shortcut">
+    <string>B</string>
+   </property>
+  </action>
+  <action name="action_Wire">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/toolwire.png</normaloff>:/images/toolwire.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Wire</string>
+   </property>
+   <property name="shortcut">
+    <string>W</string>
+   </property>
+  </action>
+  <action name="actionD_ash">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/tooldash.png</normaloff>:/images/tooldash.png</iconset>
+   </property>
+   <property name="text">
+    <string>D&amp;ash</string>
+   </property>
+   <property name="shortcut">
+    <string>D</string>
+   </property>
+  </action>
+  <action name="action_Junction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/tooljunc.png</normaloff>:/images/tooljunc.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Junction</string>
+   </property>
+   <property name="shortcut">
+    <string>J</string>
+   </property>
+  </action>
+  <action name="actionB_us_entry">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/toolbent.png</normaloff>:/images/toolbent.png</iconset>
+   </property>
+   <property name="text">
+    <string>B&amp;us entry</string>
+   </property>
+   <property name="shortcut">
+    <string>N</string>
+   </property>
+  </action>
+  <action name="action_Entry">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/toolent.png</normaloff>:/images/toolent.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Entry</string>
+   </property>
+   <property name="shortcut">
+    <string>E</string>
+   </property>
+  </action>
+  <action name="action_Tag">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/tooltag.png</normaloff>:/images/tooltag.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Tag</string>
+   </property>
+   <property name="shortcut">
+    <string>T</string>
+   </property>
+  </action>
+  <action name="action_Label">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/toollabel.png</normaloff>:/images/toollabel.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Label</string>
+   </property>
+   <property name="shortcut">
+    <string>L</string>
+   </property>
+  </action>
+  <action name="actionC_omment">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/toolcmnt.png</normaloff>:/images/toolcmnt.png</iconset>
+   </property>
+   <property name="text">
+    <string>C&amp;omment</string>
+   </property>
+   <property name="shortcut">
+    <string>C</string>
+   </property>
+  </action>
+  <action name="actionSheet_size">
+   <property name="text">
+    <string>&amp;Sheet Size...</string>
+   </property>
+  </action>
+  <action name="actionS_nap">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>S&amp;nap</string>
+   </property>
+  </action>
+  <action name="actionLibrary">
+   <property name="text">
+    <string>&amp;Library...</string>
+   </property>
+  </action>
+  <action name="action_Default_comment_font">
+   <property name="text">
+    <string>&amp;Default Comment font...</string>
+   </property>
+  </action>
+  <action name="actionL_abel_Font">
+   <property name="text">
+    <string>L&amp;abel Font...</string>
+   </property>
+  </action>
+  <action name="actionAbout_QtBSch3V_Modified">
+   <property name="text">
+    <string>About QtBSch3V Modified...</string>
+   </property>
+  </action>
+  <action name="actionAbout_Qt">
+   <property name="text">
+    <string>About Qt</string>
+   </property>
+  </action>
+  <action name="actionVisit_StorkLab_webpage">
+   <property name="text">
+    <string>Visit StorkLab webpage</string>
+   </property>
+  </action>
+  <action name="actionSetup_Layer">
+   <property name="text">
+    <string>Setup Layer</string>
+   </property>
+  </action>
+  <action name="actionDarken_non_Active_Layer">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Darken non Active Layer</string>
+   </property>
+  </action>
+  <action name="actionMove_to_Layer_1">
+   <property name="text">
+    <string>Move to Layer 1</string>
+   </property>
+  </action>
+  <action name="actionMove_to_Layer_2">
+   <property name="text">
+    <string>Move to Layer 2</string>
+   </property>
+  </action>
+  <action name="actionMove_to_Layer_3">
+   <property name="text">
+    <string>Move to Layer 3</string>
+   </property>
+  </action>
+  <action name="actionMove_to_Layer_4">
+   <property name="text">
+    <string>Move to Layer 4</string>
+   </property>
+  </action>
+  <action name="actionMove_to_Layer_5">
+   <property name="text">
+    <string>Move to Layer 5</string>
+   </property>
+  </action>
+  <action name="actionMove_to_Layer_6">
+   <property name="text">
+    <string>Move to Layer 6</string>
+   </property>
+  </action>
+  <action name="actionMove_to_Layer_7">
+   <property name="text">
+    <string>Move to Layer 7</string>
+   </property>
+  </action>
+  <action name="actionMove_to_Layer_0">
+   <property name="text">
+    <string>Move to Layer 0</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SXBSchView</class>
+   <extends>QWidget</extends>
+   <header>xbschview.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionSetup_Layer</sender>
+   <signal>triggered()</signal>
+   <receiver>layerSetting</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>442</x>
+     <y>206</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_Close</sender>
+   <signal>triggered()</signal>
+   <receiver>ApplicationWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>267</x>
+     <y>192</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

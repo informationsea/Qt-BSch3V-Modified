@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>down_image.png</file>
+        <file>fileopen.png</file>
+        <file>fileprint.png</file>
+        <file>filesave.png</file>
+        <file>lcoicon.png</file>
+        <file>lcosmallicon.png</file>
+        <file>pin_c.png</file>
+        <file>pin_n.png</file>
+        <file>pin_nc.png</file>
+        <file>pin_norm.png</file>
+        <file>pin_s.png</file>
+        <file>pin_zleng.png</file>
+        <file>tool_arc.png</file>
+        <file>tool_ellipse.png</file>
+        <file>tool_handle.png</file>
+        <file>tool_line.png</file>
+        <file>tool_pin.png</file>
+        <file>tool_polygon.png</file>
+        <file>tool_select.png</file>
+        <file>tool_text.png</file>
+        <file>up_image.png</file>
+    </qresource>
+</RCC>

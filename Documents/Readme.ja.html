@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja"> 
+  <head> 
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+    <meta http-equiv="content-style-type" content="text/css" /> 
+    <meta http-equiv="content-script-type" content="text/javascript" /> 
+    <link rel="stylesheet" type="text/css" href="./doc/style.css" /> 
+    <script type="text/javascript" src="./doc/script.js" ></script>
+    <title>Qt-BSch3V Modified</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="header">
+	<h1>Qt-BSch3V Modified</h1>
+      </div>
+
+      <div id="headline"></div>
+
+      <div class="paragraph">
+	<h2>Qt-BSch3V Modified とは</h2>
+	Qt-BSch3V Modified は<strong>無保証</strong>の回路図エディタです。オリジナルの水魚堂の岡田仁史様のQt-BSch3VをMac OS Xで使いやすいように若干の改造を施し、Qt 4.8へ対応させたものです。古いQt3由来のコードを取り除いてありますので、新しいOSでより安定した動作が期待できます。ソースコードだけでなくビルド済みのバイナリも頒布しています。またGPL v3.0以降でライセンスされていますので自由に改造することが可能です。<br />
+	現状ではあまりまだまだ不安定ですが、今後改善して行く予定です。
+      </div>
+
+      <div class="paragraph">
+	<h2>ファイル構成</h2>
+	<table border="1">
+	  <tr><td><a href="gpl-3.0.txt">gpl-3.0.txt</a></td><td>GNU General Public License 本文</td></tr>
+	  <tr><td>Readme.html</td><td>このドキュメント</td></tr>
+	  <tr><td><img src="./doc/images/bsch3v.png" style="width:42px;" />qtbsch3v.app</td><td>Qt-BSch3V 回路図エディタ</td></tr>
+	  <tr><td><img src="./doc/images/lcov.png" style="width:42px;" />qtlcov.app</td><td>ライブラリエディタ</td></tr>
+          
+	  <tr><td><img src="./doc/images/nlist.png" style="width:42px;" />qtnlist.app</td><td>ネットリスト＆部品リスト作成ソフト（テストが特に不十分）</td></tr>
+	  <tr><td><img src="./doc/images/nut.png" style="width:42px;" />qtnut.app</td><td>部品番号振り付けソフト（テストが特に不十分）</td></tr>
+          
+	  <tr><td>doc/*</td><td>ドキュメントと、Qt-BSch3Vの元のドキュメント。</td></tr>
+	  <tr><td>src/*</td><td>各種ソースコード</td></tr>
+	</table>
+      </div>
+
+      <div class="paragraph">
+	<h2>ドキュメント</h2>
+	現時点ではQt-BSch3V Modified用の使用方法を解説したドキュメントは用意されていません。水魚堂の<a href="http://www.suigyodo.com/online/manual/index.htm">Windows版BSch3Vのドキュメント</a>が参考になるかと思いますが、完全に同一ではありません。Qt-BSch3Vのドキュメントであるdoc/original-docに同梱されているドキュメントも参考になるかと思います。
+      </div>
+      
+      <div class="paragraph">
+	<h2>開発環境</h2>
+	次の環境で開発および動作確認を行っています。<br />
+	Mac OS X 10.7.4 Lion + Qt 4.8.2<br />
+	<br />
+	リリースビルドは以下のように行っています。まず、srcフォルダにある圧縮ファイルをその場にすべて展開してください。次にbuildscripts内にあるファイルをディレクトリの外にシンボリックリンクを張ります。
+        そうすると次にようなディレクトリ構成になるはずです。
+        <pre>
+BSch3VShared/
+build.sh@ -> buildscripts/build.sh
+buildscripts/
+hg.sh@ -> buildscripts/hg.sh
+makedist.sh@ -> buildscripts/makedist.sh
+qtbsch3v/
+qtlcov/
+qtnlist/
+qtnut/
+</pre>
+        次にドキュメントフォルダをDocumentsとして中身を何か入れておきましょう。ここまで来たら<code>makedist.sh version</code>と打つことで、コンパイルが行われます。リリースビルドはこの様に作っていますが、普段はQt Creatorを用いて開発しています。
+        
+	なお、使用しているQtは
+        <pre>./configure -prefix /usr/local/Trolltech/Qt-4.8.2 -opensource</pre>の設定でビルドしてあります。<br />
+      </div>
+
+      <div class="paragraph">
+	<h2>ライセンス</h2>
+	GPLの本文は<a href="gpl-3.0.txt">gpl-3.0.txt</a>にあります。なお、著作権はオリジナルの<a href="http://www.suigyodo.com/online/schsoft.htm">水魚堂</a>の岡田仁史様と改造した<a href="http://storklab.cyber-ninja.jp/">Stork</a>に帰属します。またGUIツールキットであるQtの著作権は<a href="http://qt.nokia.com/">Nokia Corporation</a>に帰属します。<br /><br />
+
+	Copyright &copy; 2010 Stork &lt;storklabあっ<span style="display:none;">-PEASE-DELETE-THIS-</span>とgmail.com&gt;<br />
+	Copyright &copy; 2006 Suigyodo &lt;hitoshiあっ<span style="display:none;">-PEASE-DELETE-THIS-</span>とsuigyodo.com&gt;<br />
+	Copyright &copy; 2010 Nokia Corporation <br /><br />
+	
+	このプログラムはフリーソフトウェアです。あなたはこれを、フリーソフトウェア財団によって発行されたGNU 一般公衆利用許諾書(バージョン3か、 それ以降のバージョンのうちどれか)が定める条件の下で再頒布または改変することができます。<br />
+このプログラムは有用であることを願って頒布されますが、*全くの無保証 *です。商業可能性の保証や特定目的への適合性は、言外に示されたものも 含め、全く存在しません。詳しくはGNU 一般公衆利用許諾書をご覧ください。<br />
+あなたはこのプログラムと共に、GNU 一般公衆利用許諾書のコピーを一部受け取っているはずです。もし受け取っていなければ、&lt;<a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt; をご覧ください。
+
+      </div>
+
+
+      <div class="paragraph">
+	<h2>ソースコードについて</h2>
+	ソースコードはすべてsrcフォルダの中にあります。Qt-BSch3V Modifiedをさらにフォークして改造される場合は適宜、展開して使用してください。QtはNokiaのサイトからSDKをダウンロードしてください。なお、再頒布の際にはGPL v3以降に従い、ソースコードを含める等の適切な対応をとってください。Qtのソースコードは含めていません。必要な場合は<a href="ftp://ftp.qt.nokia.com/qt/source/qt-everywhere-opensource-src-4.7.3.tar.gz">Nokia FTP</a>よりダウンロードしてください。
+      </div>
+
+      <div class="paragraph">
+	<h2>連絡先</h2>
+	バグ報告、その他質問事項は以下のアドレスにお願いします。ただし、本ソフトウエアは無保証ですので必ず何かしらの対応をとるとは限りません。<br />
+	Stork &lt;storklabあっ<span style="display:none;">-PEASE-DELETE-THIS-</span>とgmail.com&gt;<br />
+      </div>
+
+      <div class="paragraph">
+	<h2>更新履歴</h2>
+	<ul>
+          <li>
+            <h3>0.47.008 (2012年06月)</h3>
+            <ul>
+              <li>軽微な変更を行いました．</li>
+              <li>Qtを4.8にバージョンアップしました．</li>
+              <li>qtnutとqtnlistのバイナリを含めるようにしましたが，しばらくメンテナンス予定はありませんので，QtBSch3Vバージョンアップで上手く動かなくなるかもしれません．</li>
+            </ul>
+	  </li>
+
+          <li>
+            <h3>0.47.007 (2011年11月)</h3>
+            <ul>
+              <li>画像書き出しと印刷のフォントと色の問題を修正しました。</li>
+            </ul>
+	  </li>
+
+          <li>
+	    <h3>0.47.006 (2011年10月)</h3>
+            <ul>
+              <li>部品の名前を変更すると落ちるバグを修正しました。</li>
+              <li>Deleteキーで部品の削除ができるようになりました。</li>
+              <li>qtlcovで編集したライブラリを再起動せずに読み込めるようになりました。</li>
+            </ul>
+	  </li>
+
+	  <li>
+	    <h3>0.47.005 (2011年8月)</h3>
+            <ul>
+              <li>Qt 4.7.3に対応</li>
+	      <li>qtnutとqtnlistのバイナリの頒布を取りやめました。ソースは含まれていますが、使える保証はありません。作者がめったに使わないこととWindows版への追従の障害となることからしばらくは再開するつもりはありません。</li>
+	      <li>64bit Cocoaアプリケーションになりました。今まではCarbonでしたが、Cocoa化されたことで将来のMac OS Xでも問題なく動くことが期待されます。（たしかCarbonは廃止予定だったはずです）</li>
+	      <li>ソースのリファクタリングをしています。機能的な変化はたいしたことありませんが、Q3Supportが必要なくなったことによりバイナリサイズが減少しています。</li>
+              <li>GUIのリファクタリングが今回でおしまいで、次回からWindows版のアップデートを取り込んでいく予定です。</li>
+            </ul>
+	  </li>
+	  <li>
+	    <h3>0.47.004 (2010年9月)</h3>
+            <ul>
+	      <li>印刷の用紙設定ができない問題を修正。</li>
+	      <li>PNG書き出しの際にカラーにできない問題を修正。</li>
+	      <li>よりMacらしいアプリケーションに。(Linux等との互換性は失われていないはずです。)</li>
+	      <li>Linuxでビルドできるように修正（Ubuntu 10.04 Netbook Edtionで確認）</li>
+            </ul>
+	  </li>
+	  <li>
+	    <h3>0.47.003 (2010年3月29日)</h3>
+	    Qt3Support の排除を進め、よりMacらしいアプリケーションに。(Linux等との互換性は失われていないはずです。)
+	  </li>
+	  <li>
+	    <h3>0.47.002 (2010年2月8日)</h3>
+	    ライブラリエディタ等を含んだ最初のリリース。
+	  </li>
+	  <li>
+	    <h3>0.47.001 (2010年2月1日)</h3>
+	    とりあえず公開。ライブラリエディタ等は含まず。
+	  </li>
+	</ul>
+      </div>
+    </div>
+  </body>
+</html>
+  

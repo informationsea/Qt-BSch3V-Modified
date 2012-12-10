@@ -1,0 +1,6 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+//IDI_ICON1               ICON    DISCARDABLE     "lco.ico"
+IDI_ICON1               ICON    DISCARDABLE     "lcov.ico"
