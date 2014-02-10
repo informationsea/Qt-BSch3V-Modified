@@ -4,10 +4,10 @@
 #
 #-------------------------------------------------
 
-QT = core gui
+QT = core gui widgets
 TARGET = BSch3VShared
 TEMPLATE = lib
-CONFIG += staticlib
+CONFIG += staticlib create_prl
 
 VERSION = 0.45
 

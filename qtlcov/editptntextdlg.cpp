@@ -20,7 +20,8 @@
 
 #include <QtGui>
 #include "editptntextdlg.h"
-
+#include <QDesktopWidget>
+#include <QFontDialog>
 
 
 editptntextdlg::editptntextdlg(QWidget *parent)

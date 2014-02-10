@@ -1,6 +1,8 @@
 ﻿#include "componentlistmodel.h"
 
 #include <QDebug>
+#include <QVariant>
+#include <QColor>
 #include <assert.h>
 
 ComponentListModel::ComponentListModel(QObject *parent) :
@@ -20,9 +22,9 @@ QVariant ComponentListModel::data ( const QModelIndex & index, int role ) const
         return _componentList[index.row()]->name();
     case Qt::ForegroundRole:
         if(_aliasList[index.row()]) {
-            return Qt::red;
+            return QColor(Qt::red);
         } else {
-            return Qt::black;
+            return QColor(Qt::black);
         }
     default:
         return QVariant();

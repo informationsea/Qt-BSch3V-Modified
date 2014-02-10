@@ -41,22 +41,22 @@ SCmdlineOption::SCmdlineOption()
 
 void SCmdlineOption::setupOption(QApplication& a)
 {
-    int i;
-    string var="";
-    string val="";
-    for(i = 1; i < a.argc(); i++) {
-        val = string(a.argv()[i]);
-        if(val[0] == '-') {
-            var = val;
-        } else {
-            if(var.length() == 0) {
-                openFileName = val;
-            } else if(var == "-conf") {
-                configFileName = val;
-            }
-            var = "";
-        }
-    }
+//    int i;
+//    string var="";
+//    string val="";
+//    for(i = 1; i < a.argc(); i++) {
+//        val = string(a.argv()[i]);
+//        if(val[0] == '-') {
+//            var = val;
+//        } else {
+//            if(var.length() == 0) {
+//                openFileName = val;
+//            } else if(var == "-conf") {
+//                configFileName = val;
+//            }
+//            var = "";
+//        }
+//    }
 }
 
 static string g_strCfgFileName;

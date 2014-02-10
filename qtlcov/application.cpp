@@ -46,6 +46,10 @@
 #include <QKeyEvent>
 #include <QAction>
 #include <QToolBar>
+#include <QScrollArea>
+#include <QFontDialog>
+#include <QFileDialog>
+#include <QDesktopWidget>
 
 #include "sheetmessagebox.h"
 
@@ -1028,7 +1032,7 @@ void ApplicationWindow::editAddAlias()
     SCompInfo* pCompInfo = pIndex->compInfo();
     if(!pCompInfo)return;
 
-    add_alias* dlg = new add_alias(this,0,true);
+    AddAliasDialog* dlg = new AddAliasDialog(this);
     dlg->labelAliasOf->setText(QString::fromLatin1(strName.c_str()));
     dlg->editAlias->setText("NAME");
     if(dlg->exec()) {

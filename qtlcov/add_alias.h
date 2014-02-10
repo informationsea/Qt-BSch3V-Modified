@@ -36,13 +36,13 @@ class QLineEdit;
 class QLabel;
 class QPushButton;
 
-class add_alias : public QDialog
+class AddAliasDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    add_alias( QWidget* parent = 0, const char* name = 0, bool modal = FALSE, Qt::WFlags fl = 0 );
-    ~add_alias();
+    AddAliasDialog( QWidget* parent = 0);
+    ~AddAliasDialog();
 
     QLineEdit* editAlias;
     QLabel* textLabel1;

@@ -23,6 +23,7 @@
 
 #include <QDesktopWidget>
 #include <QApplication>
+#include <QFontDialog>
 
 editcommentdlg::editcommentdlg(QWidget *parent)
     : QDialog(parent)

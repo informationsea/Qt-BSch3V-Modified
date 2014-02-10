@@ -39,18 +39,12 @@
  *  The dialog will by default be modeless, unless you set 'modal' to
  *  TRUE to construct a modal dialog.
  */
-prop_ptn::prop_ptn( QWidget* parent, const char* name, bool modal, Qt::WFlags fl )
-    : QDialog( parent, fl )
+prop_ptn::prop_ptn(QWidget* parent)
+    : QDialog( parent )
 {
-    if ( !name )
-        setObjectName( "prop_ptn" );
-    else
-        setObjectName(name);
-    setModal(modal);
     //setSizePolicy( QSizePolicy( (QSizePolicy::SizeType)5, (QSizePolicy::SizeType)5, 0, 0, sizePolicy().hasHeightForWidth() ) );
     setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred);
     setBaseSize( QSize( 0, 0 ) );
-    setModal( TRUE );
     setWindowModality(Qt::WindowModal);
     //prop_ptnLayout = new QGridLayout( this, 1, 1, 11, 6, "prop_ptnLayout");
     prop_ptnLayout = new QGridLayout( this);

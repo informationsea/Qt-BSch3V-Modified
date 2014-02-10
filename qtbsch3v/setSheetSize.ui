@@ -34,39 +34,28 @@
   <property name="windowTitle">
    <string>Qt-BSch3V sheet size</string>
   </property>
-  <layout class="QVBoxLayout">
-   <property name="spacing">
-    <number>6</number>
-   </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <layout class="QGridLayout">
+    <layout class="QFormLayout" name="formLayout">
      <item row="0" column="0">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>Width (500..3000)</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
       <widget class="QLabel" name="label_2">
        <property name="text">
         <string>Height (400..2000)</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="editWidth">
-       <property name="maxLength">
-        <number>4</number>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Width (500..3000)</string>
        </property>
       </widget>
      </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="editHeight"/>
+     </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="editHeight">
-       <property name="maxLength">
-        <number>4</number>
-       </property>
-      </widget>
+      <widget class="QLineEdit" name="editWidth"/>
      </item>
     </layout>
    </item>

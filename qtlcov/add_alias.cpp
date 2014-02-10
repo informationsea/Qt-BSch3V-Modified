@@ -38,14 +38,10 @@
  *  The dialog will by default be modeless, unless you set 'modal' to
  *  TRUE to construct a modal dialog.
  */
-add_alias::add_alias( QWidget* parent, const char* name, bool modal, Qt::WFlags fl )
-    : QDialog( parent, fl )
+AddAliasDialog::AddAliasDialog(QWidget* parent)
+    : QDialog( parent)
 {
-    if ( !name )
-        setObjectName("add_alias" );
-    else
-        setObjectName(name);
-    setModal(modal);
+    setWindowModality(Qt::WindowModal);
     add_aliasLayout = new QGridLayout( this);
     add_aliasLayout->setMargin(11);
     add_aliasLayout->setSpacing(6);
@@ -90,7 +86,7 @@ add_alias::add_alias( QWidget* parent, const char* name, bool modal, Qt::WFlags 
 /*
  *  Destroys the object and frees any allocated resources
  */
-add_alias::~add_alias()
+AddAliasDialog::~AddAliasDialog()
 {
     // no need to delete child widgets, Qt does it all for us
 }
@@ -99,7 +95,7 @@ add_alias::~add_alias()
  *  Sets the strings of the subwidgets using the current
  *  language.
  */
-void add_alias::languageChange()
+void AddAliasDialog::languageChange()
 {
     setWindowTitle(tr( "Add Alias" ) );
     textLabel1->setText( tr( "Alias of " ) );

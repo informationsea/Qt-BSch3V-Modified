@@ -18,10 +18,8 @@
 *****************************************************************************/
 
 
-
-#include <qapplication.h>
-#include <qwindowsstyle.h>
-#include <qdir.h>
+#include <QApplication>
+#include <QDir>
 #include <stdio.h>
 
 #include "application.h"
@@ -47,22 +45,22 @@ SCmdlineOption::SCmdlineOption()
 
 void SCmdlineOption::setupOption(QApplication& a)
 {
-    int i;
-    string var = "";
-    string val = "";
-    for(i = 1; i < a.argc(); i++) {
-        val = string(a.argv()[i]);
-        if(val[0] == '-') {
-            var = val;
-        } else {
-            if(var.length() == 0) {
-                openFileName = val;
-            } else if(var == "-conf") {
-                configFileName = val;
-            }
-            var = "";
-        }
-    }
+//    int i;
+//    string var = "";
+//    string val = "";
+//    for(i = 1; i < a.argc(); i++) {
+//        val = string(a.argv()[i]);
+//        if(val[0] == '-') {
+//            var = val;
+//        } else {
+//            if(var.length() == 0) {
+//                openFileName = val;
+//            } else if(var == "-conf") {
+//                configFileName = val;
+//            }
+//            var = "";
+//        }
+//    }
 }
 
 int main( int argc, char ** argv )

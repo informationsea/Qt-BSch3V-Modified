@@ -17,6 +17,8 @@
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 *****************************************************************************/
 
+#include <QMessageBox>
+
 #include "propcomponentdlg.h"
 
 prop_componentdlg::prop_componentdlg(QWidget *parent)

@@ -19,31 +19,27 @@
 
 
 #include <QtGui>
+#include <QMessageBox>
 #include "setSheetSize.h"
 #include "SheetSizeInfo.h"
 
-setSheetSizeDlg::setSheetSizeDlg(QWidget *parent) : QDialog(parent,Qt::Sheet | Qt::CustomizeWindowHint | Qt::Dialog)
+setSheetSizeDlg::setSheetSizeDlg(QWidget *parent) : QDialog(parent)
 {
     ui.setupUi(this);
     m_width =1500;
     m_height =1000;
     setWindowModality(Qt::WindowModal);
-
 }
 
 int setSheetSizeDlg::exec()
 {
-    QString str;
-
     //ui.editWidth->setMaxLength(4);
     ui.editWidth->setInputMask("0000");
-    str.sprintf("%d",m_width);
-    ui.editWidth->setText(str);
+    ui.editWidth->setText(QString::number(m_width));
 
     //ui.editHeight->setMaxLength(4);
     ui.editHeight->setInputMask("0000");
-    str.sprintf("%d",m_height);
-    ui.editHeight->setText(str);
+    ui.editHeight->setText(QString::number(m_height));
 
     return QDialog::exec();
 }

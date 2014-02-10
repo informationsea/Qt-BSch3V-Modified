@@ -559,7 +559,7 @@ bool SComponentView::editPtnProperty(SPtnObj* pPtn)
         delete dlg;
         return false;
     } else {
-        prop_ptn *dlg = new prop_ptn(this,0,true);
+        prop_ptn *dlg = new prop_ptn(this);
         int i;
         QString str;
         for(i = 0; i <= 5; i++) {
