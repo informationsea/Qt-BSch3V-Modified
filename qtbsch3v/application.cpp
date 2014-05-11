@@ -404,6 +404,8 @@ void ApplicationWindow::openFile(QString file)
         SheetMessageBox::critical( this, "Cannot open file",msg + " is not Qt-BSch3V document.");
         break;
     }
+
+    setWindowFilePath(file);
 }
 
 void ApplicationWindow::on_action_Open_triggered()
@@ -596,6 +598,7 @@ bool ApplicationWindow::saveFileAs()
         if(!ui->xbschview->save(fn)) {
             m_filename = fn;
             setAppCaption();
+            setWindowFilePath(m_filename);
             return false;
         }
         return true;

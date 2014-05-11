@@ -272,7 +272,7 @@ ApplicationWindow::ApplicationWindow()
 
     QToolBar * pToolBar = new QToolBar( this);
     pToolBar->setObjectName("main toolbar" );
-    setUnifiedTitleAndToolBarOnMac(true);
+    //setUnifiedTitleAndToolBarOnMac(false);
     pToolBar->setIconSize(QSize(16,16));
     addToolBar(pToolBar);
     pToolBar->addAction(m_menuToolSelect);
@@ -647,6 +647,7 @@ void ApplicationWindow::load( const QString &fileName )
     this->setWindowModified(false);
     setAppCaption(fileName.section("/",-1));
     m_filename = fileName;
+    setWindowFilePath(m_filename);
     setCompIndexToListBox();
 
     int nCount = _componentListModel->componentList().size();
@@ -702,6 +703,7 @@ void ApplicationWindow::saveAs()
     }
 
     m_filename = fn;
+    setWindowFilePath(m_filename);
     setAppCaption(fn);
     doSave();
 }
