@@ -1,69 +1,38 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-if [ $# -ne 2 ]; then
-    echo "Please set project name and type."
+if type qmake > /dev/null 2>&1; then
+    qmake -v
+else
+    echo "qmake is not found."
     exit 1
 fi
 
-# export PATH=${HOME}/QtSDK/Desktop/Qt/473/gcc/bin:$PATH
-if [ -d /usr/local/Trolltech/Qt-4.8.3-sql/bin ];then
-    export PATH=/usr/local/Trolltech/Qt-4.8.3-sql/bin:$PATH
-fi
+BUILDDIR=build-`uname`
+#rm -r $BUILDDIR
+#mkdir -p $BUILDDIR
+#
+pushd $BUILDDIR
+#qmake ../bsch3v.pro
+#make -j5
+#
+#for i in qtbsch3v qtlcov; do
+#    macdeployqt $i/$i.app
+#    cp ../$i/Info_mac.plist $i/$i.app/Contents/Info.plist
+#done
+#
+#cp ../qtbsch3v/circuit.icns qtbsch3v/qtbsch3v.app/Contents/Resources/
+#cp ../qtlcov/library.icns qtlcov/qtlcov.app/Contents/Resources/
 
+mkdir -p dist
+pushd dist
 
-name=$1
-src=$PWD/$1
-build=$PWD/$1-build-desktop
-dist=$PWD/dist
-apps=$PWD/dist
-
-
-if [ "$2" == "clean" ];then
-    rm -r $build
-    exit
-fi
-
-export COPYFILE_DISABLE=true
-
-mkdir -p $dist
-mkdir -p $apps
-
-rm -r $build
-mkdir -p $build
-
-echo 'Building...'
-
-if [ -d /Volumes ];then
-    spec="-spec macx-g++"
-else
-    spec=
-fi
-
-pushd $build
-qmake $src/$1.pro $spec -config release BUILD_VERSION=${VERSION}
-echo qmake $src/$1.pro $spec -config release BUILD_VERSION=${VERSION}
-make -j5 > log$1.txt
-
-if [ $2 == 'app' ];then
-
-    if [ -r $src/Info_mac.plist ] ; then
-	cp $src/Info_mac.plist ${name}.app/Contents/Info.plist
-	cp $src/*.icns ${name}.app/Contents/Resources
-    fi
-
-    echo 'Deploying...'
-
-    macdeployqt ${name}.app 
-
-    cp -r ${name}.app ${apps}/
-elif [ $2 == 'exe' ];then
-    if [ -f ${name}.exe ];then
-        cp ${name}.exe ${apps}/
-    else
-        cp ${name} ${apps}/
-    fi
-fi
+cp -R ../qtbsch3v/qtbsch3v.app .
+cp -R ../qtlcov/qtlcov.app .
+cp -R ../../Documents/* .
 popd
+popd
+
+git archive --format=tgz --output=$BUILDDIR/dist/src.tar.gz HEAD
 
 
 
